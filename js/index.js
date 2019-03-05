@@ -5,6 +5,15 @@ const logoHeading = document.querySelector(".logo-heading");
 logoHeading.addEventListener('keydown', e => {
   console.log(`this is the blank key: ${e.code}`)
 })
+const navLogoHeading = document.querySelector('.logo-heading');
+navLogoHeading.addEventListener('mouseleave', (e) => e.target.style.transform = "scale(1.0)");
+
+// Nav links do not reload page.
+nav.addEventListener('click', (e) => {e.preventDefault(); console.log("clicked on navlink");}); 
+
+// Hover over the header to make the header reappear. 
+const navContainer = document.querySelector(".nav-container");
+navContainer.addEventListener("mouseenter", () => header.style.opacity = "1");
 
 const nav = document.querySelector(".nav");
 nav.addEventListener("mouseover", e => {   
@@ -17,14 +26,6 @@ const textContent = document.querySelector('.text-content');
 textContent.addEventListener('dblclick', e => {
   e.target.style.textDecoration = "underline";
 });
-//-----------------------------------------
-
-    // const destination = document.querySelectorAll('.destination');
-    // destination.addEventListener('click' ,() => {
-    // // const selection = e.target.value.substring(e.target.selectionStart, e.target.selectionEnd);
-    // // e.target.style.fontSize = '30px';
-    // console.log(`Hello`)
-    // })
 
 const div = document.querySelector('.btn');
 
@@ -39,8 +40,6 @@ destination[0].addEventListener('click', function(e) {
 });
 
 
-//----------------------------------------
-
 const mainNavigation = document.querySelector('.main-navigation')
 mainNavigation.addEventListener('click', e => {
 
@@ -52,3 +51,25 @@ console.log(`this is my current target: ${e.currentTarget}`)
 
     e.stopPropagation();
 })
+
+const funBusBanner = document.querySelector(".intro > img" );
+funBusBanner.addEventListener('drag', (e) => e.target.style.transform = 'scale(1.25)');
+
+
+const button = document.querySelectorAll('.btn');
+button.forEach(node => {node.addEventListener('dblclick', function()
+{let name = prompt('Enter name'); alert(`${name} you are signed up!`);})});
+
+
+footer = document.querySelector('.footer');
+footer.addEventListener('contextmenu', (e) => 
+{e.target.style.backgroundColor = 'MediumTurquoise';})
+
+
+const allExpeditionsTitle = document.querySelectorAll('.destination h4') allExpeditionsTitle.forEach(node => 
+{node.addEventListener('mousemove', (e) => {e.target.style.color = 'MediumSeaGreen'})});
+
+
+const adventureAwaits = document.querySelectorAll('.text-content h2')
+adventureAwaits.forEach(node => {node.addEventListener('mousemove', (e) => 
+{e.target.style.color = 'Maroon'})});
