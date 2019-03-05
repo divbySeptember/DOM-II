@@ -8,18 +8,20 @@ logoHeading.addEventListener('keydown', e => {
 const navLogoHeading = document.querySelector('.logo-heading');
 navLogoHeading.addEventListener('mouseleave', (e) => e.target.style.transform = "scale(1.0)");
 
-// Nav links do not reload page.
-nav.addEventListener('click', (e) => {e.preventDefault(); console.log("clicked on navlink");}); 
-
 // Hover over the header to make the header reappear. 
 const navContainer = document.querySelector(".nav-container");
-navContainer.addEventListener("mouseenter", () => header.style.opacity = "1");
+navContainer.addEventListener("mouseenter", () => {
+navContainer.style.opacity = "1";
+});
 
-const nav = document.querySelector(".nav");
-nav.addEventListener("mouseover", e => {   
-    // highlight the mouseover target
+const newNav = document.querySelector("nav");
+newNav.addEventListener("mouseover", e => {   
     e.target.style.color = "orange";
 })
+
+newNav.addEventListener('click', (e) => 
+{e.preventDefault(); console.log("clicked on navlink");
+}); 
 
 const textContent = document.querySelector('.text-content');
 // dblclick to make underlined
@@ -66,10 +68,9 @@ footer.addEventListener('contextmenu', (e) =>
 {e.target.style.backgroundColor = 'MediumTurquoise';})
 
 
-const allExpeditionsTitle = document.querySelectorAll('.destination h4') allExpeditionsTitle.forEach(node => 
-{node.addEventListener('mousemove', (e) => {e.target.style.color = 'MediumSeaGreen'})});
+const allExpeditionsTitle = document.querySelectorAll('.destination h4')
+allExpeditionsTitle.forEach(node => {node.addEventListener('mousemove', (e) => {e.target.style.color = 'MediumSeaGreen'})});
 
 
 const adventureAwaits = document.querySelectorAll('.text-content h2')
-adventureAwaits.forEach(node => {node.addEventListener('mousemove', (e) => 
-{e.target.style.color = 'Maroon'})});
+adventureAwaits.forEach(node => {node.addEventListener('mousemove', (e) => {e.target.style.color = 'Maroon'})});
